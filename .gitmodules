@@ -1,0 +1,15 @@
+[submodule "01-hybrid-rag"]
+	path = 01-hybrid-rag
+	url = https://github.com/ShanmugaGanesh1999/llm-hybrid-rag.git
+[submodule "02-llm-gateway"]
+	path = 02-llm-gateway
+	url = https://github.com/ShanmugaGanesh1999/llm-gateway.git
+[submodule "03-guarded-agent"]
+	path = 03-guarded-agent
+	url = https://github.com/ShanmugaGanesh1999/llm-guarded-agent.git
+[submodule "04-text-to-sql"]
+	path = 04-text-to-sql
+	url = https://github.com/ShanmugaGanesh1999/llm-text-to-sql.git
+[submodule "05-eval-harness"]
+	path = 05-eval-harness
+	url = https://github.com/ShanmugaGanesh1999/llm-eval-harness.git

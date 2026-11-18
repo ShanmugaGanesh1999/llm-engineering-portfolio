@@ -1,0 +1,18 @@
+# Runs all five projects together on one Docker network.
+#
+#   docker compose up -d --build          # P1-P4 APIs, gateway, databases (eval-runner runs once offline and exits)
+#   docker compose run --rm eval-runner   # P5 offline release gate
+#   EVAL_MODE=live docker compose run --rm eval-runner   # P5 against the live P1/P3/P4 APIs
+#
+# In the combined stack, Project 1 sends answer generation through Project 2's gateway
+# (RAG_LLM_MODE=gateway). Set RAG_LLM_MODE=mock to turn that off.
+# Each project still runs alone from its own folder.
+name: llm-portfolio
+
+include:
+  - path: 01-hybrid-rag/docker-compose.yml
+    env_file: integration.env
+  - path: 02-llm-gateway/docker-compose.yml
+  - path: 03-guarded-agent/docker-compose.yml
+  - path: 04-text-to-sql/docker-compose.yml
+  - path: 05-eval-harness/docker-compose.yml
